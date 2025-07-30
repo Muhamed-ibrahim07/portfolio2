@@ -94,19 +94,27 @@ const Hero = () => {
             </span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-full font-semibold text-white overflow-hidden interactive">
-              <span className="relative z-10 flex items-center gap-2">
-                <Play className="w-5 h-5" />
-                View Projects
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-magenta-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-            </button>
+            <a
+  href="#projects"
+  className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-full font-semibold text-white overflow-hidden interactive inline-block"
+>
+  <span className="relative z-10 flex items-center gap-2">
+    <Play className="w-5 h-5" />
+    View Projects
+  </span>
+  <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-magenta-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+</a>
+
             
-            <button className="group px-8 py-4 border-2 border-cyan-400/50 rounded-full font-semibold text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 interactive">
-              <span className="flex items-center gap-2">
-                Download Resume
-              </span>
-            </button>
+            <a
+  href="#resume"
+  className="group px-8 py-4 border-2 border-cyan-400/50 rounded-full font-semibold text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 interactive inline-block"
+>
+  <span className="flex items-center gap-2">
+    Download Resume
+  </span>
+</a>
+
           </div>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Bridging Hardware & AI | Embedded Systems | VLSI | ML-Powered Solutions
