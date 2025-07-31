@@ -7,70 +7,37 @@ const Certifications = () => {
   const certifications = [
     {
       id: 1,
-      title: 'Deep Learning Specialization',
-      issuer: 'Coursera - Andrew Ng',
+      title: 'The Complete Python Pro Bootcamp',
+      issuer: 'Udemy - Angela Yu',
       date: '2024',
-      category: 'ml',
-      image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Comprehensive deep learning curriculum covering neural networks, CNN, RNN, and more',
-      skills: ['TensorFlow', 'Python', 'Neural Networks', 'CNN', 'RNN'],
-      link: 'https://coursera.org'
+      category: 'Python',
+      image: 'https://static.ybox.vn/2023/4/6/1680971339748-FPg8IHhWUAE0Zyz.jpg',
+      description: 'Flask, Beautiful Soup, Selenium, API integrations and much more',
+      skills: ['Flask', 'Python', 'Numpy', 'Pandas', 'Games'],
+      link: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-5598b306-dd12-47b9-83af-89771b4ca0b5.pdf'
     },
     {
       id: 2,
-      title: 'FPGA Design Certification',
-      issuer: 'Xilinx',
-      date: '2023',
-      category: 'hardware',
-      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Advanced FPGA design techniques and implementation strategies',
-      skills: ['Verilog', 'FPGA', 'Xilinx Tools', 'DSP'],
-      link: 'https://xilinx.com'
+      title: 'Season of AI : Best of AI at Ignite',
+      issuer: 'Microsoft',
+      date: '2025',
+      category: 'AI',
+      image: 'https://th.bing.com/th/id/OIP.RArxaPjk_kZRdLKfXqPaOwHaEK?w=282&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
+      description: ' Copilots, AI agents, customizing AI for business needs, and selecting the right AI solutions for various use cases.',
+      skills: ['Copilots', 'Prompting AI', 'Azure AI'],
+      link: 'https://media.licdn.com/dms/image/v2/D5622AQEAcDGUqH8Lkw/feedshare-shrink_800/B56ZTfw9zeGUAk-/0/1738920943576?e=1756944000&v=beta&t=Bzp-Z8kntHnc3uY9XCCJpVDgBQ9G-ik9WNy0LjMSziw'
     },
     {
-      id: 3,
-      title: 'Machine Learning Engineering',
-      issuer: 'Google Cloud',
-      date: '2024',
-      category: 'ml',
-      image: 'https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Production ML systems, MLOps, and scalable ML infrastructure',
-      skills: ['MLOps', 'TensorFlow', 'Kubernetes', 'Docker'],
-      link: 'https://cloud.google.com'
-    },
-    {
-      id: 4,
-      title: 'PCB Design Professional',
-      issuer: 'Altium',
-      date: '2023',
-      category: 'hardware',
-      image: 'https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Advanced PCB design principles and professional layout techniques',
-      skills: ['Altium Designer', 'PCB Layout', 'Signal Integrity', 'EMC'],
-      link: 'https://altium.com'
-    },
-    {
-      id: 5,
-      title: 'AI Ethics and Governance',
-      issuer: 'MIT Professional Education',
-      date: '2024',
-      category: 'ml',
-      image: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Ethical AI development, bias detection, and responsible AI practices',
-      skills: ['Ethics', 'AI Governance', 'Bias Detection', 'Responsible AI'],
-      link: 'https://mit.edu'
-    },
-    {
-      id: 6,
-      title: 'RF & Microwave Engineering',
-      issuer: 'IEEE',
-      date: '2023',
-      category: 'hardware',
-      image: 'https://images.pexels.com/photos/2147029/pexels-photo-2147029.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Advanced RF circuit design and microwave engineering principles',
-      skills: ['RF Design', 'Microwave', 'Antenna Design', 'S-Parameters'],
-      link: 'https://ieee.org'
-    }
+  id: 3,
+  title: 'Developing Ethical Hacking Tools with Python',
+  issuer: 'Cybrary via LinkedIn Learning',
+  date: '2025',
+  category: 'cybersecurity',
+  image: 'https://th.bing.com/th/id/OIP.ddq8Arq7IECCcJ4B99jO0QHaEK?w=320&h=180&c=7&r=0&o=5&pid=1.7',
+  description: 'Covered core techniques of ethical hacking with Python including scanning, enumeration, and exploitation tools.',
+  skills: ['Python', 'Ethical Hacking', 'Cybersecurity'],
+  link: 'https://www.linkedin.com/learning/certificates/52577e9ec4b031b444a5e9880609829ea677c78478b69564c2ff0185a27f43d7?trk=share_certificate'
+}
   ];
 
   const categories = [
@@ -180,10 +147,16 @@ const Certifications = () => {
                   </div>
 
                   {/* View Certificate Button */}
-                  <button className="group/btn w-full mt-4 py-3 px-4 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 hover:from-cyan-500 hover:to-violet-500 border border-cyan-400/30 hover:border-transparent rounded-xl text-cyan-400 hover:text-white font-medium transition-all duration-300 flex items-center justify-center gap-2 interactive">
-                    <ExternalLink className="w-4 h-4 group-hover/btn:rotate-45 transition-transform duration-300" />
-                    View Certificate
-                  </button>
+<a
+  href={cert.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group/btn relative z-10 w-full mt-4 py-3 px-4 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 hover:from-cyan-500 hover:to-violet-500 border border-cyan-400/30 hover:border-transparent rounded-xl text-cyan-400 hover:text-white font-medium transition-all duration-300 flex items-center justify-center gap-2"
+>
+  <ExternalLink className="w-4 h-4 group-hover/btn:rotate-45 transition-transform duration-300" />
+  View Certificate
+</a>
+
                 </div>
 
                 {/* Shine Effect */}

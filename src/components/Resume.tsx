@@ -4,26 +4,43 @@ import { Download, Eye, Palette, FileText } from 'lucide-react';
 const Resume = () => {
   const [resumeTheme, setResumeTheme] = useState<'dark' | 'light'>('dark');
   const [isDownloading, setIsDownloading] = useState(false);
-const handleDownload = (theme: 'dark' | 'light') => {
+// =================== ADD THIS NEW FUNCTION IN ITS PLACE ===================
+const handleDownload = async (theme: 'dark' | 'light') => {
   setIsDownloading(true);
-  setTimeout(() => {
-    setIsDownloading(false);
+  try {
+    // Ensure the path to your PDF is correct. It should be in the `public` folder.
+    const response = await fetch('/Mohd-Ibrahim-resume.pdf');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
 
     const fileName = theme === 'dark' ? 'resume-dark.pdf' : 'resume-light.pdf';
     const link = document.createElement('a');
-
-    // Use correct relative URL path to your pdf
-    link.href = '/Mohd-Ibrahim-resume.pdf';
-
+    link.href = url;
     link.download = fileName;
 
     document.body.appendChild(link);
     link.click();
+    
+    // Clean up after the download has been initiated
     document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
 
     console.log(`Downloading ${theme} resume...`);
-  }, 2000);
+  } catch (error) {
+    console.error('Error downloading the resume:', error);
+    // Optionally, show an error message to the user
+    alert('Sorry, the resume could not be downloaded.');
+  } finally {
+    // Using a short timeout to give the download time to start before the UI updates
+    setTimeout(() => {
+        setIsDownloading(false);
+    }, 1000);
+  }
 };
+// ===========================================================================
 
 
   return (

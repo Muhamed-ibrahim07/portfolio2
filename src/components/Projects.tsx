@@ -11,7 +11,7 @@ const Projects = () => {
   id: 1,
   title: 'Proximity Sensor',
   description: 'Designed a proximity sensor using infrared (IR) technology and op-amp based signal conditioning to detect nearby objects accurately.',
-  image: 'https://www.engineersgarage.com/wp-content/uploads/2020/12/P05-02.jpg', // A relevant placeholder image
+  image: 'https://tse3.mm.bing.net/th/id/OIP.Ihviyqi4GRK-zvxlgbddfQHaHu?r=0&rs=1&pid=ImgDetMain&o=7&rm=3', // A relevant placeholder image
   tags: ['IR Sensor', 'Op-Amp', 'Electronics', 'Analog Circuits'],
   github: 'https://github.com/yourusername/proximity-sensor-ir-opamp',
   demo: 'https://drive.google.com/drive/folders/1BOFupGI64_Bt7HtkGXeLhg27ex_1ASTm?usp=sharing',
